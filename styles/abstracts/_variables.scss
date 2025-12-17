@@ -1,0 +1,47 @@
+$colors: (
+    branco: #ffffff,
+    marinho: #1e1e1e,
+    marinho-hover: #252530,
+    grafite: #464646,
+    cinza: #efefef,
+    cinza-médio: #a6a6a6,
+    amarelo: #f5d010,
+    azul: #6f99ff,
+    azul-claro: #ccdbff,
+    verde: #c3ff95,
+    coral: #ed7562,
+);
+
+$typography: (
+    delagothic: (
+        family: ("Dela Gothic One", sans-serif),
+        sizes: (
+            h1: 4.75rem,
+            h2: 3rem,
+            h3: 2.5rem,
+            h4: 2rem,
+            h5: 1.25rem,
+            h6: 1rem,
+        ),
+    ),
+
+    poppins: (
+        family: ("Poppins", sans-serif),
+        sizes: (
+            body-large: 1.25rem,
+            body: 1rem,
+            body-small: 0.875rem,
+        ),
+    ),
+);
+
+$weights: (
+    regular: 400,
+    bold: 700,
+);
+
+$breakpoints: (
+    mobile: 428px,
+    tablet: 768px,
+    desktop: 1200px,
+);

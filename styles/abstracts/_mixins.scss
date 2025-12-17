@@ -1,0 +1,16 @@
+@use "sass:map"; // map-get() --> map.get()
+@use "./variables" as v;
+@use "./functions" as f;
+
+@mixin font-config($font-family, $font-size, $font-weight: regular, $line-height: 1.2) {
+    font-family: f.font-family($font-family);
+    font-size: f.font-size($font-family, $font-size);
+    font-weight: f.font-weight($font-weight);
+    line-height: $line-height;
+}
+
+@mixin responsive($breakpoint, $type: max) {
+    @media screen and (#{$type}-width: f.breakpoint($breakpoint)) {
+        @content;
+    }
+}
