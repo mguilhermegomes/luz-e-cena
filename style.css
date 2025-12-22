@@ -1,4 +1,96 @@
 @import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+.cabecalho {
+  padding: 1% 8% 0 8%;
+}
+@media screen and (max-width: 832px) {
+  .cabecalho {
+    padding: 3% 4% 0 4%;
+  }
+}
+.cabecalho .cabecalho__nav .nav__lista {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  gap: 40px;
+}
+@media screen and (max-width: 1200px) {
+  .cabecalho .cabecalho__nav .nav__lista {
+    row-gap: 20px;
+  }
+}
+@media screen and (max-width: 428px) {
+  .cabecalho .cabecalho__nav .nav__lista {
+    justify-content: center;
+    gap: 40px;
+    row-gap: 20px;
+  }
+}
+@media screen and (max-width: 760px) {
+  .cabecalho .cabecalho__nav .nav__lista .nav__lista-item__link {
+    display: none;
+  }
+}
+.cabecalho .cabecalho__nav .nav__lista .nav__lista-item__link .cabecalho__nav-link {
+  color: #1e1e1e;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+.cabecalho .cabecalho__nav .nav__lista .nav__lista-item__menu {
+  display: none;
+}
+@media screen and (max-width: 760px) {
+  .cabecalho .cabecalho__nav .nav__lista .nav__lista-item__menu {
+    display: block;
+    cursor: pointer;
+  }
+}
+.cabecalho .cabecalho__nav .nav__lista .nav__lista-item__loc {
+  flex: 0.7;
+}
+@media screen and (max-width: 1200px) {
+  .cabecalho .cabecalho__nav .nav__lista .nav__lista-item__loc {
+    flex: 1 1 100%;
+    order: 1;
+    padding: 0 5%;
+  }
+}
+.cabecalho .cabecalho__nav .nav__lista .nav__lista-item__loc #localizacao-form > #localizacao-input {
+  background-image: url("/assets/header/location_on.svg");
+  background-repeat: no-repeat;
+  background-position: 95% center;
+  background-color: #efefef;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8em;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+.cabecalho .cabecalho__nav .nav__lista .nav__lista-item__loc #localizacao-form > #localizacao-input:focus {
+  outline: none;
+  border: 1px solid #1e1e1e;
+}
+.cabecalho .cabecalho__nav .nav__lista .nav__lista-item__icons {
+  display: flex;
+  gap: 40px;
+}
+@media screen and (max-width: 1200px) {
+  .cabecalho .cabecalho__nav .nav__lista .nav__lista-item__icons {
+    gap: 20px;
+  }
+}
+.cabecalho .cabecalho__nav .nav__lista .nav__lista-item__icons .cabecalho__nav-link {
+  display: flex;
+  align-items: center;
+}
+
 * {
   box-sizing: border-box;
 }

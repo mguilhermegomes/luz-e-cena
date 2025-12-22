@@ -9,7 +9,45 @@
     <link rel="shortcut icon" href="assets/favicon.svg" type="image/x-icon">
 </head>
 <body>
-    <header class="cabecalho"></header>
+    <header class="cabecalho">
+        <nav class="cabecalho__nav">
+            <ul class="nav__lista">
+                <li class="nav__lista-item nav__lista-item__menu">
+                    <input type="checkbox" name="Menu Hamburguer" id="menu" hidden>
+                    <label for="menu">
+                        <img src="assets/header/menu.svg" alt="Menu Hamburguer">
+                    </label>
+                </li>
+                <li class="nav__lista-item">
+                    <a href="index.html">
+                        <img src="assets/Logo.png" alt="Logo Luz & Cena">
+                    </a>
+                </li>
+                <li class="nav__lista-item nav__lista-item__link">
+                    <a href="#" class="cabecalho__nav-link">Eventos</a>
+                </li>
+                <li class="nav__lista-item nav__lista-item__link">
+                    <a href="#" class="cabecalho__nav-link">Club fidelidade</a>
+                </li>
+                <li class="nav__lista-item nav__lista-item__link">
+                    <a href="#" class="cabecalho__nav-link ">Sobre nós</a>
+                </li>
+                <li class="nav__lista-item nav__lista-item__loc">
+                    <form id="localizacao-form">
+                        <input type="search" name="Localização" id="localizacao-input">
+                    </form>
+                </li>
+                <li class="nav__lista-item nav__lista-item__icons">
+                    <a href="#">
+                        <img src="assets/header/Carrinho.svg" alt="Carrinha de compras">
+                    </a>
+                    <a href="#">
+                        <img src="assets/header/Perfil.svg" alt="Perfil">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
     <main></main>
     <footer class="rodape"></footer>
 </body>
