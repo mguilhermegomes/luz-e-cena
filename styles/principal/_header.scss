@@ -2,9 +2,9 @@
 @use "../abstracts/index" as *;
 
 .cabecalho {
-    padding: 1% 8% 0 8%;
+    padding: 1% 8%;
     @include responsive(padding-4-per_cent) {   //responsividade
-        padding: 3% 4% 0 4%;
+        padding: 3% 4%;
     }
     
     .cabecalho__nav {
@@ -33,7 +33,7 @@
                 .cabecalho__nav-link {
                     color: map.get($colors, marinho);
                     text-decoration: none;
-                    @include font-config(poppins, body-large);
+                    @include font-config(poppins, body-large, regular, 1.5);
                 }
             }
 

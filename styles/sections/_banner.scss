@@ -1,0 +1,46 @@
+@use "sass:map";    // map-get() --> map.get()
+@use "../abstracts/index" as *;
+
+.banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-image: url("/assets/banners/Banner.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 60vh;
+    @include responsive(tablet) {   //responsividade
+        height: 35vh;
+    }
+    @include responsive(mobile) {   //responsividade
+        height: 25vh;
+    }
+
+    .banner__container {
+        width: auto;
+        height: auto;
+        padding-left: 8%;
+        @include responsive(padding-4-per_cent) {   //responsividade
+            padding-left: 4%;
+        }
+
+        .banner__titulo {
+            width: 84%;
+            color: map.get($colors, branco);
+            @include font-config(delagothic, h1);
+            @include responsive(tablet) {   //responsividade
+                @include font-config(delagothic, h2);
+            }
+            @include responsive(mobile) {   //responsividade
+                @include font-config(delagothic, h4);
+            }
+
+            span {
+                color: map.get($colors, azul);
+            }
+        }
+    }
+}
