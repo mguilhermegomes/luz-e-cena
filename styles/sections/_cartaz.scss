@@ -1,0 +1,152 @@
+@use "sass:map"; // map-get() --> map.get()
+@use "../abstracts/index" as *;
+
+.filmes {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding-top: 5%;
+
+  .filmes__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    @include responsive(desktop) {
+      //responsividade
+      padding: 0 8%;
+    }
+    @include responsive(padding-4-per_cent) {
+      //responsividade
+      padding: 0 4%;
+    }
+
+    .filmes__menu__lista {
+      display: flex;
+      gap: 15px;
+      align-self: flex-start;
+      padding-left: 8%;
+      @include responsive(desktop) {
+        //responsividade
+        padding: 0;
+      }
+
+      .menu__lista-item {
+        @include font-config(poppins, body-large, regular, 1.5);
+      }
+
+      .menu__lista-item__cartaz {
+        border-bottom: 1px solid map.get($colors, marinho);
+        @include font-config(poppins, body-large, bold, 1.5);
+      }
+    }
+
+    form {
+      width: 100%;
+      text-align: center;
+
+      #filme-busca {
+        background-image: url("/assets/cartaz/search.svg");
+        background-repeat: no-repeat;
+        background-position: 95% center;
+        border: 1px solid map.get($colors, cinza-medio);
+        border-radius: 8px;
+        width: 45%;
+        padding: 0.875em;
+        @include font-config(poppins, body-small);
+        @include responsive(desktop) {
+          //responsividade
+          width: 100%;
+        }
+      }
+
+      #filme-busca::placeholder {
+        color: map.get($colors, grafite);
+        @include font-config(poppins, body);
+      }
+
+      #filme-busca:focus {
+        outline: none;
+        border: 1px solid map.get($colors, marinho);
+      }
+    }
+  }
+
+  .filmes__cartaz {
+    padding: 0 8%;
+    margin-bottom: 1.25rem;
+
+    .cartaz__titulo {
+      margin-bottom: 2.5rem;
+      @include font-config(delagothic, h2, bold);
+    }
+
+    .cartaz__lista {
+      gap: 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+      .cartaz__lista-item {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        gap: 10px;
+        box-shadow: 0 4px 24px 0 map.get($colors, sombra);
+
+        img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+        }
+
+        .cartaz__texto-container {
+          display: flex;
+          flex-direction: column;
+          padding: 0 1em 1em 1em;
+
+          .cartaz__lista-item__titulo {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            @include font-config(poppins, body-large, bold, 1.5);
+          }
+
+          .cartaz__descricao {
+            margin-top: auto;
+
+            .cartaz__descricao__linha {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+
+              .descricao__dimensao {
+                background-color: map.get($colors, cinza);
+                padding: 0.125rem 0.5rem;
+                border-radius: 4px;
+              }
+
+              .descricao__classificacao {
+                background-color: map.get($colors, amarelo);
+                padding: 0.15rem 0.5rem;
+                border-radius: 4px;
+              }
+
+              .dimensao__3d {
+                background-color: map.get($colors, cinza-medio);
+              }
+
+              .classificacao__livre {
+                background-color: map.get($colors, verde);
+              }
+            }
+
+            .cartaz__descricao__linha:nth-child(1) {
+              margin-bottom: 0.25rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
