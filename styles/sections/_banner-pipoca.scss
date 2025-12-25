@@ -1,0 +1,14 @@
+@use "sass:map";    // map-get() --> map.get()
+@use "../abstracts/index" as *;
+
+.banner-pipoca {
+    background-image: url("/assets/banners/Banner-Pipoca.png");
+    height: 52vh;
+    margin-top: 8%;
+    @include responsive(tablet) {
+        height: 32vh;
+    }
+    @include responsive(mobile) {
+        height: 22vh;
+    }
+}

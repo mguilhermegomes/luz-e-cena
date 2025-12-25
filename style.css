@@ -155,7 +155,7 @@
   display: flex;
   flex-direction: column;
   gap: 48px;
-  padding-top: 5%;
+  margin-top: 5%;
 }
 .filmes .filmes__menu {
   display: flex;
@@ -234,6 +234,11 @@
   padding: 0 8%;
   margin-bottom: 1.25rem;
 }
+@media screen and (max-width: 832px) {
+  .filmes .filmes__cartaz {
+    padding: 0 4%;
+  }
+}
 .filmes .filmes__cartaz .cartaz__titulo {
   margin-bottom: 2.5rem;
   font-family: "Dela Gothic One", sans-serif;
@@ -299,6 +304,81 @@
 }
 .filmes .filmes__cartaz .cartaz__lista .cartaz__lista-item .cartaz__texto-container .cartaz__descricao .cartaz__descricao__linha:nth-child(1) {
   margin-bottom: 0.25rem;
+}
+
+.banner-pipoca {
+  background-image: url("/assets/banners/Banner-Pipoca.png");
+  height: 52vh;
+  margin-top: 8%;
+}
+@media screen and (max-width: 760px) {
+  .banner-pipoca {
+    height: 32vh;
+  }
+}
+@media screen and (max-width: 428px) {
+  .banner-pipoca {
+    height: 22vh;
+  }
+}
+
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  background-color: #ccdbff;
+  padding: 4% 8%;
+}
+.newsletter .newsletter__container .newsletter__titulo {
+  text-align: center;
+  font-family: "Dela Gothic One", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.newsletter .newsletter__inscricao {
+  width: 100%;
+  height: auto;
+}
+.newsletter .newsletter__inscricao .inscricao__form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  height: auto;
+}
+.newsletter .newsletter__inscricao .inscricao__form .inscricao__input {
+  flex: 0 1 65%;
+  background-color: #ccdbff;
+  border: 2px solid #1e1e1e;
+  border-radius: 8px;
+  padding: 0.8rem 1.5rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+@media screen and (max-width: 760px) {
+  .newsletter .newsletter__inscricao .inscricao__form .inscricao__input {
+    flex: 1 1 65%;
+  }
+}
+.newsletter .newsletter__inscricao .inscricao__form .inscricao__input::placeholder {
+  color: #1e1e1e;
+}
+.newsletter .newsletter__inscricao .inscricao__form .inscricao__botao {
+  background-color: #1e1e1e;
+  color: #efefef;
+  border-radius: 8px;
+  padding: 1rem;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 * {
