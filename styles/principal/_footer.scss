@@ -1,2 +1,85 @@
 @use "sass:map"; // map-get() --> map.get()
 @use "../abstracts/index" as *;
+
+.rodape {
+  background-color: map.get($colors, marinho);
+  padding: 4% 8%;
+  @include responsive(padding-4-per_cent) {
+    padding: 4%;
+  }
+
+  .rodape__colunas {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: space-around;
+    gap: 32px;
+    @include responsive(desktop) {
+      column-gap: 40px;
+      grid-template-rows: repeat(2, auto);
+      grid-template-columns: repeat(3, auto);
+      grid-template-areas:
+        "logo logo logo"
+        "funcionamento institucional redes";
+
+      @include grid-area-element("coluna__logo", logo);
+      @include grid-area-element("coluna__funcionamento", funcionamento);
+      @include grid-area-element("coluna__institucional", institucional);
+      @include grid-area-element("coluna__redes", redes);
+    }
+    @include responsive(tablet) {
+      grid-template-rows: repeat(4, auto);
+      grid-template-columns: none;
+      grid-template-areas:
+        "logo"
+        "funcionamento"
+        "institucional"
+        "redes";
+      text-align: center;
+    }
+    @include responsive(mobile) {
+      text-align: start;
+    }
+
+    .rodape__coluna {
+      .rodape__coluna__titulo {
+        margin-bottom: 1rem;
+        color: map.get($colors, cinza);
+        @include font-config(delagothic, h5);
+      }
+
+      .coluna__funcionamento__lista > .funcionamento__lista-item,
+      .coluna__funcionamento__lista > .funcionamento__lista-item > a,
+      .coluna__nav > .coluna__nav-link {
+        color: map.get($colors, cinza);
+        text-decoration: none;
+      }
+    }
+
+    .coluna__logo {
+      @include responsive(desktop) {
+        text-align: center;
+      }
+
+      .coluna__logo__descricao {
+        margin-top: 1.2rem;
+        color: map.get($colors, cinza);
+        @include font-config(poppins, body-large, regular, 1.5);
+      }
+    }
+
+    .coluna__funcionamento > .coluna__funcionamento__lista,
+    .coluna__institucional > .coluna__nav {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .coluna__redes {
+      .coluna__nav {
+        @include responsive(mobile) {
+          text-align: center;
+        }
+      }
+    }
+  }
+}

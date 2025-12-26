@@ -2,87 +2,95 @@
 @use "../abstracts/index" as *;
 
 .cabecalho {
-    padding: 1% 8%;
-    @include responsive(padding-4-per_cent) {   //responsividade
-        padding: 3% 4%;
-    }
-    
-    .cabecalho__nav {
+  padding: 1% 8%;
+  @include responsive(padding-4-per_cent) {
+    //responsividade
+    padding: 3% 4%;
+  }
 
-        .nav__lista {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            text-align: center;
-            gap: 40px;
-            @include responsive(desktop) {  //responsividade
-                row-gap: 20px;
-            }
-            @include responsive(mobile) {   //responsividade
-                justify-content: center;
-                gap: 40px;
-                row-gap: 20px;
-            }
+  .cabecalho__nav {
+    .nav__lista {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      gap: 40px;
+      @include responsive(desktop) {
+        //responsividade
+        row-gap: 20px;
+      }
+      @include responsive(mobile) {
+        //responsividade
+        justify-content: center;
+        gap: 40px;
+        row-gap: 20px;
+      }
 
-            .nav__lista-item__link {
-                @include responsive(tablet) {   //responsividade
-                    display: none;
-                }
-
-                .cabecalho__nav-link {
-                    color: map.get($colors, marinho);
-                    text-decoration: none;
-                    @include font-config(poppins, body-large, regular, 1.5);
-                }
-            }
-
-            .nav__lista-item__menu {
-                display: none;
-                @include responsive(tablet) {   //responsividade
-                    display: block;
-                    cursor: pointer;
-                }
-            }
-
-            .nav__lista-item__loc {
-                flex: 0.7;
-                @include responsive(desktop) {  //responsividade
-                    flex: 1 1 100%;
-                    order: 1;
-                    padding: 0 5%;
-                }
-
-                #localizacao-form > #localizacao-input {
-                    background-image: url("/assets/header/location_on.svg");
-                    background-repeat: no-repeat;
-                    background-position: 95% center;
-                    background-color: map.get($colors, cinza);
-                    border: none;
-                    border-radius: 8px;
-                    padding: 0.8em;
-                    width: 100%;
-                    @include font-config(poppins, body-small)
-                }
-
-                #localizacao-form > #localizacao-input:focus {
-                    outline: none;
-                    border: 1px solid map.get($colors, marinho);
-                }
-            }
-            
-            .nav__lista-item__icons {
-                display: flex;
-                gap: 40px;
-                @include responsive(desktop) {
-                    gap: 20px;
-                }
-
-                .cabecalho__nav-link {
-                    display: flex;
-                    align-items: center;
-                }
-            }
+      .nav__lista-item__link {
+        @include responsive(tablet) {
+          //responsividade
+          display: none;
         }
+
+        .cabecalho__nav-link {
+          color: map.get($colors, marinho);
+          text-decoration: none;
+          @include font-config(poppins, body-large, regular, 1.5);
+        }
+      }
+
+      .nav__lista-item__menu {
+        display: none;
+        @include responsive(tablet) {
+          //responsividade
+          display: block;
+          cursor: pointer;
+        }
+      }
+
+      .nav__lista-item__loc {
+        flex: 0.7;
+        @include responsive(desktop) {
+          //responsividade
+          flex: 1 1 100%;
+          order: 1;
+          padding: 0 5%;
+        }
+
+        #localizacao-form > #localizacao-input {
+          background-image: url("/assets/header/location_on.svg");
+          background-repeat: no-repeat;
+          background-position: 95% center;
+          background-color: map.get($colors, cinza);
+          border: none;
+          border-radius: 8px;
+          padding: 0.8em;
+          width: 100%;
+          @include font-config(poppins, body-small);
+        }
+
+        #localizacao-form > #localizacao-input:focus {
+          outline: none;
+          border: 1px solid map.get($colors, marinho);
+        }
+      }
+
+      .nav__lista-item__icons {
+        display: flex;
+        gap: 40px;
+        @include responsive(desktop) {
+          gap: 20px;
+        }
+        @include responsive(header-icons) {
+          display: none;
+        }
+
+        .cabecalho__nav-link {
+          display: flex;
+          align-items: center;
+        }
+      }
     }
+  }
 }

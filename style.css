@@ -86,6 +86,11 @@
     gap: 20px;
   }
 }
+@media screen and (max-width: 342px) {
+  .cabecalho .cabecalho__nav .nav__lista .nav__lista-item__icons {
+    display: none;
+  }
+}
 .cabecalho .cabecalho__nav .nav__lista .nav__lista-item__icons .cabecalho__nav-link {
   display: flex;
   align-items: center;
@@ -369,6 +374,9 @@
 .newsletter .newsletter__inscricao .inscricao__form .inscricao__input::placeholder {
   color: #1e1e1e;
 }
+.newsletter .newsletter__inscricao .inscricao__form .inscricao__input:focus {
+  outline: none;
+}
 .newsletter .newsletter__inscricao .inscricao__form .inscricao__botao {
   background-color: #1e1e1e;
   color: #efefef;
@@ -379,6 +387,93 @@
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.2;
+}
+
+.rodape {
+  background-color: #1e1e1e;
+  padding: 4% 8%;
+}
+@media screen and (max-width: 832px) {
+  .rodape {
+    padding: 4%;
+  }
+}
+.rodape .rodape__colunas {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  justify-content: space-around;
+  gap: 32px;
+}
+@media screen and (max-width: 1200px) {
+  .rodape .rodape__colunas {
+    column-gap: 40px;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(3, auto);
+    grid-template-areas: "logo logo logo" "funcionamento institucional redes";
+  }
+  .rodape .rodape__colunas .coluna__logo {
+    grid-area: logo;
+  }
+  .rodape .rodape__colunas .coluna__funcionamento {
+    grid-area: funcionamento;
+  }
+  .rodape .rodape__colunas .coluna__institucional {
+    grid-area: institucional;
+  }
+  .rodape .rodape__colunas .coluna__redes {
+    grid-area: redes;
+  }
+}
+@media screen and (max-width: 760px) {
+  .rodape .rodape__colunas {
+    grid-template-rows: repeat(4, auto);
+    grid-template-columns: none;
+    grid-template-areas: "logo" "funcionamento" "institucional" "redes";
+    text-align: center;
+  }
+}
+@media screen and (max-width: 428px) {
+  .rodape .rodape__colunas {
+    text-align: start;
+  }
+}
+.rodape .rodape__colunas .rodape__coluna .rodape__coluna__titulo {
+  margin-bottom: 1rem;
+  color: #efefef;
+  font-family: "Dela Gothic One", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+.rodape .rodape__colunas .rodape__coluna .coluna__funcionamento__lista > .funcionamento__lista-item,
+.rodape .rodape__colunas .rodape__coluna .coluna__funcionamento__lista > .funcionamento__lista-item > a,
+.rodape .rodape__colunas .rodape__coluna .coluna__nav > .coluna__nav-link {
+  color: #efefef;
+  text-decoration: none;
+}
+@media screen and (max-width: 1200px) {
+  .rodape .rodape__colunas .coluna__logo {
+    text-align: center;
+  }
+}
+.rodape .rodape__colunas .coluna__logo .coluna__logo__descricao {
+  margin-top: 1.2rem;
+  color: #efefef;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.rodape .rodape__colunas .coluna__funcionamento > .coluna__funcionamento__lista,
+.rodape .rodape__colunas .coluna__institucional > .coluna__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+@media screen and (max-width: 428px) {
+  .rodape .rodape__colunas .coluna__redes .coluna__nav {
+    text-align: center;
+  }
 }
 
 * {

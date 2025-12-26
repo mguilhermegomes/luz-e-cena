@@ -2,58 +2,62 @@
 @use "../abstracts/index" as *;
 
 .newsletter {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 32px;
-    background-color: map.get($colors, azul-claro);
-    padding: 4% 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  background-color: map.get($colors, azul-claro);
+  padding: 4% 8%;
 
-    .newsletter__container {
-        .newsletter__titulo {
-            text-align: center;
-            @include font-config(delagothic, h4, bold);
-        }
+  .newsletter__container {
+    .newsletter__titulo {
+      text-align: center;
+      @include font-config(delagothic, h4, bold);
     }
+  }
 
-    .newsletter__inscricao {
-        width: 100%;
-        height: auto;
+  .newsletter__inscricao {
+    width: 100%;
+    height: auto;
 
-        .inscricao__form {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 16px;
-            width: 100%;
-            height: auto;
+    .inscricao__form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      width: 100%;
+      height: auto;
 
-            .inscricao__input {
-                flex: 0 1 65%;
-                background-color: map.get($colors, azul-claro);
-                border: 2px solid map.get($colors, marinho);
-                border-radius: 8px;
-                padding: 0.8rem 1.5rem;
-                @include font-config(poppins, body-small);
-                @include responsive(tablet) {
-                    //responsividade
-                    flex: 1 1 65%;
-                }
-            }
-
-            .inscricao__input::placeholder {
-                color: map.get($colors, marinho);
-            }
-
-            .inscricao__botao {
-                background-color: map.get($colors, marinho);
-                color: map.get($colors, cinza);
-                border-radius: 8px;
-                padding: 1rem;
-                border: none;
-                @include font-config(poppins, body, bold)
-            }
+      .inscricao__input {
+        flex: 0 1 65%;
+        background-color: map.get($colors, azul-claro);
+        border: 2px solid map.get($colors, marinho);
+        border-radius: 8px;
+        padding: 0.8rem 1.5rem;
+        @include font-config(poppins, body-small);
+        @include responsive(tablet) {
+          //responsividade
+          flex: 1 1 65%;
         }
+      }
+
+      .inscricao__input::placeholder {
+        color: map.get($colors, marinho);
+      }
+
+      .inscricao__input:focus {
+        outline: none;
+      }
+
+      .inscricao__botao {
+        background-color: map.get($colors, marinho);
+        color: map.get($colors, cinza);
+        border-radius: 8px;
+        padding: 1rem;
+        border: none;
+        @include font-config(poppins, body, bold);
+      }
     }
+  }
 }
